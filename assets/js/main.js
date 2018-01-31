@@ -21,6 +21,7 @@ const setTheme = (themeName, superTheme, reset) => {
   }
 };
 
+/* Based on the solution here: https://css-tricks.com/snippets/jquery/smooth-scrolling/  */
 // Select all links with hashes
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
@@ -52,7 +53,6 @@ $('a[href*="#"]')
           if ($target.is(":focus")) { // Checking if the target was focused
             return false;
           } else {
-            // $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
             $target.focus(); // Set focus again
           }
         });
