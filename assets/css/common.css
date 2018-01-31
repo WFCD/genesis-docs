@@ -9,6 +9,9 @@ code, .commands td:first-child {
 
 .permissions {
   color: #77dd77;
+}
+
+.note, .permissions {
   font-family: 'Hack', monospace;
 }
 
@@ -38,62 +41,6 @@ code, .commands td:first-child {
   .dropdown-menu label {
     color: white !important;
   }
-
-  .fissure-body {
-    display: inline-block;
-    max-width: 80%;
-    overflow: scroll;
-    }
-}
-
-/* picker dropdown stuff */
-.component-selector ul li .checkbox {
-  margin-left: 30px;
-}
-.platform-picker ul li:first-child,
-.theme-picker ul li:first-child,
-.component-selector ul li:first-child {
-  border: 0;
-}
-
-.platform-picker ul a,
-.theme-picker ul a,
-.component-selector ul a {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.platform-picker ul a span,
-.theme-picker ul a span,
-.component-selector ul a span {
-  flex-grow: 1;
-}
-
-.platform-picker ul a:hover span,
-.theme-picker ul a:hover span,
-.component-selector ul a:hover span {
-  color: inherit;
-}
-
-.platform-picker img,
-.theme-picker img,
-.component-selector img {
-  height: 16px;
-  width: 16px;
-  margin-top: 3px;
-}
-
-.platform-picker .list-group-item-success {
-  color: white;
-}
-
-.platform-picker .list-group-item-success img {
-  filter: invert(100%);
-}
-
-.platform-picker .list-group-item-success span {
-  color: white !important;
 }
 
 img {
@@ -144,85 +91,4 @@ img {
 body {
   margin-top: 50px !important;
   margin-bottom: 40px !important;
-}
-
-/* force inversion images in progress bars to be white  */
-.progress-bar .inv {
-  filter: invert(100%);
-}
-
-/* Loader */
-.loader {
-  display: block;
-  margin: auto;
-  height: 50px;
-  width: 50px;
-}
-
-/* Loader Animation */
-@keyframes moving-left {
-  0% {
-    transform: translateX(35px);
-  }
-  50% {
-    transform: translateX(-65px);
-  }
-  100% {
-    transform: translateX(35px);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  17% {
-    transform: rotate(90deg);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  40% {
-    transform: rotate(180deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  65% {
-    transform: rotate(270deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  90% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes moving-right {
-  0% {
-    transform: translateX(-35px);
-  }
-  50% {
-    transform: translateX(65px);
-  }
-  100% {
-    transform: translateX(-35px);
-  }
-}
-
-.loader-left {
-  animation: moving-left .3s ease infinite;
-}
-
-.loader-center {
-  transform-origin: 50% 50%;
-  animation: spin 1.2s linear infinite;
-}
-
-.loader-right {
-  animation: moving-right .3s ease infinite;
 }
