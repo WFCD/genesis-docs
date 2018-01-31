@@ -42,18 +42,19 @@ code, .commands td:first-child {
   .dropdown-menu label {
     color: white !important;
   }
-  
+}
+
+@media only screen and (max-width: 990px) {
   #affix-nav {
     display: none;
   }
 }
-
 #affix-nav {
   z-index: 9999 !important;
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 990px) {
   #jump-nav {
     display: none;
   }
