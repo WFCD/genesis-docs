@@ -5,6 +5,7 @@
 code, .commands td:first-child {
   color: rgba(255,94,94,1);
   font-family: 'Hack', monospace;
+  background: transparent;
 }
 
 .permissions {
