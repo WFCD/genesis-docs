@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="css/main.night.css" id="mode-custom">
 
 	<script>
-		/* global $, Cookies */
+		/* global $, Cookies, setTheme */
 		// Wait until page is ready to display
 		document.getElementsByTagName("html")[0].style.visibility = "hidden";
 		$(document).ready(function() {
@@ -33,6 +33,9 @@
 
 		var theme = $('#mode');
 		var themecustom = $('#mode-custom');
+		if (typeof Cookies.get('mode') === 'undefined') {
+			setTheme('night', 'night');
+		}
     switch (Cookies.get('mode')) {
       case 'night':
         theme.attr('href', 'css/bootstrap-night.min.css');
