@@ -50,6 +50,10 @@ code, .commands td:first-child {
   
 }
 
+#affix-nav {
+  max-width: 200px;
+}
+
 #jump-nav {
   visibility: visible;
 }
