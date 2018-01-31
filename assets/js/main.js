@@ -1,5 +1,11 @@
 /* globals $,  Cookies, location */
 
+const $body = $(document.body);
+$body.scrollspy({
+    target: '#affix-nav',
+    offset: 205
+})
+
 const setTheme = (themeName, superTheme, reset) => {
   const theme = $('#mode');
   const themecustom = $('#mode-custom');
@@ -32,8 +38,8 @@ $('a[href*="#"]')
   .click(function(event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
       location.hostname == this.hostname
     ) {
       // Figure out element to scroll to

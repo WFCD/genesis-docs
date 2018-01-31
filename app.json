@@ -1,13 +1,13 @@
 {
-  "name": "warframe-hub",
+  "name": "genesis-doc",
   "description": "Warframe Hub aims to bring the community with up to date information within the game of Warframe.",
   "keywords": [
     "warframe",
     "status",
     "hub"
   ],
-  "repository": "https://github.com/WFCD/warframe-hub",
-  "website": "https://hub.warframestat.us",
+  "repository": "https://github.com/WFCD/genesis-doc",
+  "website": "https://genesis.warframestat.us",
   "scripts": {
   },
   "env": {
