@@ -34,7 +34,7 @@
 		var theme = $('#mode');
 		var themecustom = $('#mode-custom');
 		if (typeof Cookies.get('mode') === 'undefined') {
-			setTheme('night', 'night');
+			Cookies.set('mode', 'night');
 		}
     switch (Cookies.get('mode')) {
       case 'night':
