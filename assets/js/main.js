@@ -1,0 +1,3 @@
+/* globals $,  Cookies */
+
+// Nothing, yet

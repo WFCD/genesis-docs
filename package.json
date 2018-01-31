@@ -1,0 +1,53 @@
+{
+  "name": "genesis-docs",
+  "version": "1.0.0",
+  "description": "Help page for Genesis",
+  "scripts": {
+    "test": "mocha spec mochaspec.js",
+    "postinstall": "npm install -g gulp pm2",
+    "start": "gulp && pm2 start pm2.json",
+    "restart": "pm2 kill && pm2 start pm2.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WFCD/genesis-docs.git"
+  },
+  "keywords": [
+    "warframe",
+    "genesis"
+  ],
+  "author": "TobiTenno",
+  "license": "APACHE 2.0",
+  "bugs": {
+    "url": "https://github.com/WFCD/genesis-docs/issues"
+  },
+  "homepage": "https://genesis.warframestat.us",
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "chai": "^4.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "del": "^3.0.0",
+    "eslint": "^4.11.0",
+    "express": "~4.15.5",
+    "express-handlebars": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-minify": "^2.1.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "proxyquire": "^1.8.0",
+    "really-need": "^1.9.2",
+    "serve-favicon": "~2.4.5",
+    "sinon": "^4.1.2",
+    "supertest": "^3.0.0",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
+    "mocha": "^4.0.1"
+  }
+}
