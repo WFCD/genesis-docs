@@ -46,16 +46,17 @@ code, .commands td:first-child {
   #affix-nav {
     display: none;
   }
-  
-  
 }
 
 #affix-nav {
   z-index: 9999 !important;
 }
 
-#jump-nav {
-  display: none;
+
+@media only screen and (min-width: 768px) {
+  #jump-nav {
+    display: none;
+  }
 }
 
 img {
