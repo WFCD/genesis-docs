@@ -103,3 +103,8 @@ h4:not([class="modal-title"]){
   width: 16px;
   overflow: hidden;
 }
+
+.affix {
+    top: 20px;
+    z-index: 9999 !important;
+}
