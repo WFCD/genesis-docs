@@ -7,15 +7,15 @@ const setTheme = (themeName, superTheme, reset) => {
     if (theme.hasClass(themeName)) {
       setTheme(false, false, true);
     } else {
-      theme.attr('href', `css/bootstrap-${superTheme}.min.css`);
-      themecustom.attr('href', `css/main.${themeName}.css`);
+      theme.attr('href', `/css/bootstrap-${superTheme}.min.css`);
+      themecustom.attr('href', `/css/main.${themeName}.css`);
       theme.removeClass();
       theme.addClass(themeName);
       Cookies.set('mode', themeName);
     }
   } else {
-    theme.attr('href', 'css/bootstrap-default.min.css');
-    themecustom.attr('href', 'css/main.css');
+    theme.attr('href', '/css/bootstrap-default.min.css');
+    themecustom.attr('href', '/css/main.css');
     theme.removeClass();
     Cookies.set('mode', 'day');
   }
