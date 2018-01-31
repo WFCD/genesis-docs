@@ -53,6 +53,10 @@ code, .commands td:first-child {
   z-index: 9999 !important;
 }
 
+.affix-top {
+    position: fixed;
+}
+
 
 @media only screen and (min-width: 990px) {
   #jump-nav {
