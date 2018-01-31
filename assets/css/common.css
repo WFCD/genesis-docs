@@ -44,18 +44,19 @@ code, .commands td:first-child {
   }
   
   #affix-nav {
-    visibility: hidden;
+    display: none;
   }
   
   
 }
 
 #affix-nav {
-  max-width: 200px;
+  z-index: 9999 !important;
+  display: inline;
 }
 
 #jump-nav {
-  visibility: visible;
+  display: none;
 }
 
 img {
@@ -116,8 +117,4 @@ h4:not([class="modal-title"]){
   height: 16px;
   width: 16px;
   overflow: hidden;
-}
-
-.affix {
-    z-index: 9999 !important;
 }
