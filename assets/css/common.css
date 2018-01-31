@@ -52,7 +52,6 @@ code, .commands td:first-child {
 
 #affix-nav {
   z-index: 9999 !important;
-  display: inline;
 }
 
 #jump-nav {
