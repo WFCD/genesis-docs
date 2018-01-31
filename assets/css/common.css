@@ -42,6 +42,16 @@ code, .commands td:first-child {
   .dropdown-menu label {
     color: white !important;
   }
+  
+  #affix-nav {
+    visibility: hidden;
+  }
+  
+  
+}
+
+#jump-nav {
+  visibility: visible;
 }
 
 img {
