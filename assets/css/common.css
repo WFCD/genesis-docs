@@ -111,7 +111,7 @@ body {
   padding-bottom: 40px !important;
 }
 
-h4:not([class="modal-title"]){
+h4:not([class="modal-title"]), h3{
   padding-top: 70px;
 }
 
