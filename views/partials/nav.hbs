@@ -20,14 +20,6 @@
 						<li><a name="Warframe Hub" rel="noopener" target="_blank" href="https://hub.warframestat.us">Hub</a></li>
 					</ul>
 				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right" id="navbar-right">
-				<li class="dropdown" id="jump-nav">
-					<a name="Commands Navigation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jump to... <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-	               		{{> nav-list}}
-					</ul>
-				</li>
 				<li class="dropdown theme-picker">
 					<a name="Theme Selection" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Theme <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
@@ -56,6 +48,31 @@
 						</li>
 					</ul>
 				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" id="navbar-right">
+				<li class="dropdown" id="jump-nav">
+					<a name="Commands Navigation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jump to... <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						{{> nav-list}}
+					</ul>
+				</li>
+				{{#if loggedIn}}
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}}</a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servers <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								{{#each user.guilds}}
+								<li><a name="Drops" rel="noopener" href="/server/{{this.id}}">{{this.name}}</a></li>
+								{{/each}}
+							</ul>
+						</li>
+					</li>
+				{{else}}
+					<li>
+						<button type="button" class="btn btn-outline-default navbar-btn" onclick="javascript:location.href='/login';">Log in</button>
+					</li>
+				{{/if}}
 			</ul>
 		</div>
 	</div>

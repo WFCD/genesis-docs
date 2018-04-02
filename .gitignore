@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+#production css and js
+
+public/css/common.css
+public/css/main.css
+public/css/main.eidolon.css
+public/css/main.night.css
+public/css/main.retro.css
+public/js/main.js
