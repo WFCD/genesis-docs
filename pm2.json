@@ -7,7 +7,7 @@
       "watch"            : ["public", "assets"],
       "log_date_format"  : "YYYY-MM-DD HH:mm Z",
       "env": {
-      	"PORT": 3647
+      	"PORT": 3647,
         "OAUTH_CLIENT_SECRET": "",
         "OAUTH_CLIENT_ID": ""
       }
