@@ -37,8 +37,8 @@ passport.deserializeUser(function(obj, done) {
 
 
 passport.use(new DiscordStrategy({
-  clientID: '170751319915626497',
-  clientSecret: 'gh1x0S1EcNlZldIcPnc-VcEgBT9EvVkn',
+  clientID: process.env.OAUTH_CLIENT_ID,
+  clientSecret: process.env.OAUTH_CLIENT_SECRET,
   callbackURL: 'http://127.0.0.1:3647/callback',
   scope: scopes
 }, function(accessToken, refreshToken, profile, done) {
