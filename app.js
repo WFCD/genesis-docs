@@ -71,6 +71,10 @@ app.use('/', require('./routes/index'));
 app.use('/login', passport.authenticate('discord', {
   scope: scopes
 }));
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
 app.get('/callback',
   passport.authenticate('discord', {
     failureRedirect: '/'

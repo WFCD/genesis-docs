@@ -63,7 +63,9 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servers <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								{{#each user.guilds}}
-								<li><a name="Drops" rel="noopener" href="/server/{{this.id}}">{{this.name}}</a></li>
+									<li><a name="Drops" rel="noopener" href="/server/{{this.id}}">{{this.name}}</a></li>
+								{{else}}
+									<li><a name="Drops" rel="noopener">No Servers</a></li>
 								{{/each}}
 							</ul>
 						</li>

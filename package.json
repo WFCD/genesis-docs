@@ -6,7 +6,7 @@
     "test": "mocha spec mochaspec.js",
     "postinstall": "npm install -g gulp pm2",
     "start": "gulp && pm2 start pm2.json",
-    "restart": "pm2 kill && pm2 start pm2.json"
+    "restart": "pm2 kill && npm start"
   },
   "repository": {
     "type": "git",
@@ -36,12 +36,14 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-minify": "^2.1.0",
     "morgan": "~1.9.0",
+    "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-discord": "^0.1.3",
     "proxyquire": "^1.8.0",
     "really-need": "^1.9.2",
     "serve-favicon": "~2.4.5",
     "sinon": "^4.1.2",
+    "sql-template-strings": "^2.2.2",
     "supertest": "^3.0.0",
     "winston": "^2.4.0"
   },
