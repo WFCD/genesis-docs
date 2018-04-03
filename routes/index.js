@@ -4,6 +4,8 @@ const express = require('express');
 const logger = require('winston');
 const SQL = require('sql-template-strings');
 const mysql = require('mysql2/promise');
+const Promise = require('bluebird');
+const Discord = require('discord.js');
 
 const router = express.Router();
 
@@ -22,20 +24,27 @@ const db = mysql.createPool(opts);
 
 router.get('/', async (req, res) => {
   logger.info(`Received ${req.method} request for ${req.originalUrl} from ${req.connection.remoteAddress}`);
+  let guilds;
   if (req.isAuthenticated()) {
-    const guilds = req.user.guilds;
+    guilds = req.user.guilds;
     const guildIds = guilds.map(guild => guild.id);
 
-    const query = SQL `select distinct guild_id from channels where guild_id in (${guildIds});`;
-    const queryResult = await db.query(query);
+    const query = SQL`select distinct guild_id from channels where guild_id in (${guildIds});`;
+    const queryResult = (await db.query(query))[0].map(row => row.guild_id);
 
-    logger.error(queryResult[0]);
+    guilds = guilds.filter(guild => {
+      const hasGuild = queryResult.indexOf(guild.id) !== -1;
+
+      const perm = new Discord.Permissions(guild.permissions);
+      const hasPerm = perm.has('MANAGE_ROLES', true);
+      return hasPerm && hasGuild;
+    });
   }
   res.render('index', {
     title: 'Index',
     loggedIn: req.isAuthenticated(),
     user: req.user,
-    guilds: 'beep'
+    guilds
   });
 });
 

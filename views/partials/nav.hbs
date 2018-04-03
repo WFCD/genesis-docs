@@ -62,7 +62,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servers <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								{{#each user.guilds}}
+								{{#each guilds}}
 									<li><a name="Drops" rel="noopener" href="/server/{{this.id}}">{{this.name}}</a></li>
 								{{else}}
 									<li><a name="Drops" rel="noopener">No Servers</a></li>
@@ -72,7 +72,7 @@
 					</li>
 				{{else}}
 					<li>
-						<button type="button" class="btn btn-outline-default navbar-btn" onclick="javascript:location.href='/login';">Log in</button>
+						<button type="button" class="btn btn-outline-warning navbar-btn" onclick="javascript:location.href='/login';">Log in</button>
 					</li>
 				{{/if}}
 			</ul>
