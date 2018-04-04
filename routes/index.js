@@ -24,12 +24,34 @@ const db = mysql.createPool(opts);
 
 router.get('/', async (req, res) => {
   logger.info(`Received ${req.method} request for ${req.originalUrl} from ${req.connection.remoteAddress}`);
+
+  res.render('index', {
+    title: 'Index',
+    loggedIn: req.isAuthenticated(),
+    user: req.user,
+    guilds: await GetGuilds(req)
+  });
+});
+
+router.get('/guild/:id', async (req, res) => {
+  // Main guild page for dashboard
+  // db get guild?
+  res.render('guild', {
+    title: req.user.guilds[req.params.id].name,
+    loggedIn: req.isAuthenticated(),
+    user: req.user,
+    guilds: await GetGuilds(req)
+  })
+});
+
+// doing this as we need to get the guild list each time they go to a page. or if you want to do it another way we can
+async function GetGuilds(req) {
   let guilds;
   if (req.isAuthenticated()) {
     guilds = req.user.guilds;
     const guildIds = guilds.map(guild => guild.id);
 
-    const query = SQL`select distinct guild_id from channels where guild_id in (${guildIds});`;
+    const query = SQL `select distinct guild_id from channels where guild_id in (${guildIds});`;
     const queryResult = (await db.query(query))[0].map(row => row.guild_id);
 
     guilds = guilds.filter(guild => {
@@ -40,12 +62,6 @@ router.get('/', async (req, res) => {
       return hasPerm && hasGuild;
     });
   }
-  res.render('index', {
-    title: 'Index',
-    loggedIn: req.isAuthenticated(),
-    user: req.user,
-    guilds
-  });
-});
-
+  return guilds
+}
 module.exports = router;

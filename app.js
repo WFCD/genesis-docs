@@ -66,7 +66,7 @@ app.use(cookieParser());
 
 app.use('/', require('./routes/index'));
 
-//app.use('/server', require('./routes/??'));
+app.use('/', require('./routes/settings'));
 
 app.use('/login', passport.authenticate('discord', {
   scope: scopes
