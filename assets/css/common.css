@@ -44,10 +44,6 @@ code, .commands td:first-child {
   }
 }
 
-#affix-nav {
-  position: sticky;
-}
-
 @media only screen and (max-width: 990px) {
   #affix-nav {
     display: none;
@@ -113,7 +109,6 @@ img {
 body {
   padding-top: 70px !important;
   padding-bottom: 40px !important;
-  position: relative;
 }
 
 h4:not([class="modal-title"]), h3{

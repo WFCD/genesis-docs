@@ -5,7 +5,7 @@
   "scripts": {
     "test": "mocha spec mochaspec.js",
     "postinstall": "npm install -g gulp pm2",
-    "start": "gulp && pm2 start pm2.json",
+    "start": "gulp && pm2 start pm2.json && pm2 logs genesis-docs",
     "restart": "pm2 kill && npm start"
   },
   "repository": {
