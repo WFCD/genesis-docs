@@ -25,19 +25,19 @@
 					<ul class="dropdown-menu" role="menu">
 						<li class="text-center" id="theme_night">
 							<a name="Nightmode" href="#" id="nightmode">
-								<img class="cc-img inv" src="img/themes/night/icon.png">
+								<img class="cc-img inv" src="/img/themes/night/icon.png">
 								<span>Night Mode</span>
 							</a>
 						</li>
 						<li class="text-center" id="theme_retro">
 							<a name="Retro" href="#" id="retro">
-								<img class="cc-img inv" src="img/themes/retro/icon.png">
+								<img class="cc-img inv" src="/img/themes/retro/icon.png">
 								<span>Retro Mode</span>
 							</a>
 						</li>
 						<li class="text-center" id="theme_eidolon">
 							<a name="Eidolon" href="#" id="eidolon">
-								<img class="cc-img inv" src="img/themes/eidolon/icon.png">
+								<img class="cc-img inv" src="/img/themes/eidolon/icon.png">
 								<span>Eidolon</span>
 							</a>
 						</li>
@@ -63,7 +63,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servers <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								{{#each guilds}}
-									<li><a name="Drops" rel="noopener" href="/server/{{this.id}}">{{this.name}}</a></li>
+									<li><a name="Drops" rel="noopener" href="/guild/{{this.id}}">{{this.name}}</a></li>
 								{{else}}
 									<li><a name="Drops" rel="noopener">No Servers</a></li>
 								{{/each}}
@@ -72,7 +72,7 @@
 					</li>
 				{{else}}
 					<li>
-						<button type="button" class="btn btn-outline-warning navbar-btn" onclick="javascript:location.href='/login';">Log in</button>
+						<button type="button" class="btn btn-login navbar-btn" onclick="javascript:location.href='/login';">Log in</button>
 					</li>
 				{{/if}}
 			</ul>

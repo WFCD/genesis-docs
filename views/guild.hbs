@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2 text-center">
+    <h2>Managing {{guild.name}}</h2>
+
+    <h3 class="text-center">Guild Settings</h3>
+      {{#each guild.settings}}
+      	<pre class="text-center"><span name="{{@key}}" rel="noopener">{{this}}</span></pre>
+      {{else}}
+        <p class="text-center"> Lol, nothing yet. </p>
+      {{/each}}
+    <hr />
+    <h3 class="text-center">Channel Settings</h3>
+    <!-- I don't know if we want to do a dropdown or something similar to the main page with a side fixed bar -->
+    <div class="btn-group text-center">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Channels <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu text-center">
+        {{#each guild.channels}}
+  				<li><a class="dropdown-item" name="{{@key}}" rel="noopener">{{@key}}</a></li>
+  			{{else}}
+  				<li><a class="dropdown-item" name="No Channels" rel="noopener">No Channels</a></li>
+  			{{/each}}
+      </ul>
+    </div>
+  </div><!-- end centering wrapper -->
+	{{> footer}}
+</div><!-- end container -->
+<!-- required js for page -->
+<script src="/js/main.js"></script>
+{{> themes}}

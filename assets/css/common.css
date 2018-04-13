@@ -120,3 +120,15 @@ h4:not([class="modal-title"]), h3{
   width: 16px;
   overflow: hidden;
 }
+
+.btn.btn-login,
+.btn.btn-login:hover  {
+  background-color: transparent!important;
+  color: white;
+  border-color: white;
+  border-width: 1px
+}
+
+.btn-login {
+  border-radius: 3px;
+}
