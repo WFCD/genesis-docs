@@ -15,13 +15,41 @@
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Channels <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu text-center">
+      <ul class="dropdown-menu text-center scroll">
         {{#each guild.channels}}
-  				<li><a class="dropdown-item" name="{{@key}}" rel="noopener">{{@key}}</a></li>
+  				<li><a class="dropdown-item" name="{{@key}}" rel="noopener" href="#{{@key}}" onclick="setChannel({{JSONstringify this}})">{{this.name}}</a></li>
   			{{else}}
   				<li><a class="dropdown-item" name="No Channels" rel="noopener">No Channels</a></li>
   			{{/each}}
       </ul>
+    </div>
+    <br />
+    <div id="channelSettings">
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="prefixValue">Prefix</label>
+            <div class="input-group">
+              <div class="input-group-addon">Prefix</div>
+              <input type="text" class="form-control" id="prefixValue" placeholder="/">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+      <br />
+      <div class="respondToSettings">
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="respondToSettings">Respond To Settings?</label>
+            <div class="input-group">
+              <div class="input-group-addon">Respond To Settings?</div>
+              <label class="switch">
+                <input type="checkbox" id="respondToSettings">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </form>
     </div>
   </div><!-- end centering wrapper -->
 	{{> footer}}

@@ -8,8 +8,10 @@ const SQL = require('sql-template-strings');
 const mysql = require('mysql2/promise');
 const Promise = require('bluebird');
 const Discord = require('discord.js');
+const request = require('request-promise');
 
 const router = express.Router();
+const token = process.env.TOKEN;
 
 logger.level = process.env.LOG_LEVEL || 'error'; // default to error, we don't need everything
 
@@ -77,12 +79,15 @@ async function getGuilds(req) {
 async function aggregateChannels(guild) {
   const channelIds = (await db.query(SQL`select distinct id from channels where guild_id = ${guild.id};`))[0].map(row => row.id);
   const settings = {};
+
+  const channelArr = await request({ uri: `https://discordapp.com/api/guilds/${guild.id}/channels`, headers: { Authorization: `Bot ${token}` }, json: true });
+
   channelIds.forEach((channelId) => {
     settings[channelId] = {};
   });
   const channelQuery = SQL`select * from settings where channel_id in (${channelIds})
     and setting in ('language', 'platform', 'allowCustom', 'allowInline',
-      'createPrivateChannel', 'respond_to_settings', 'delete_after_respond', 'delete_response');`;
+      'createPrivateChannel', 'respond_to_settings', 'delete_after_respond', 'delete_response', 'prefix');`;
 
   const settingResults = await db.query(channelQuery);
 
@@ -100,7 +105,7 @@ async function aggregateChannels(guild) {
     /* eslint-disable no-param-reassign */
     Object.keys(settings).forEach((channel) => {
       const channelSettings = settings[channel];
-
+      Object.assign(channelSettings, channelArr.filter(chan => chan.id === channel)[0]);
       if (!channelSettings.platform) {
         channelSettings.platform = defaults.platform;
       }

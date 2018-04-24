@@ -18,7 +18,7 @@ $('a[href*="#"]')
   .not('[href="#credits"]')
   .click((event) => {
     // On-page links
-    if (
+    if (this.pathname &&
       window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
       &&
       window.location.hostname === this.hostname
@@ -46,3 +46,9 @@ $('a[href*="#"]')
       }
     }
   });
+
+
+const setChannel = (channel) => { // eslint-disable-line no-unused-vars
+  document.getElementById('prefixValue').value = channel.prefix;
+  document.getElementById('respondToSettings').checked = channel.respondToSettings;
+};
