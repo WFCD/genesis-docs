@@ -25,6 +25,10 @@
       <td>Add a password to a specific pool<br /> - <span class="example">Example <code>glyphs set password --pool tobiah Genesis</code></span></td>
     </tr>
     <tr>
+      <td>glyphs grant --pool &lt;pool id&gt; &lt;platform&gt; &lt;user mention or ID&gt;</td>
+      <td>Grant a code to a user from a specific pool<br /> - <span class="example">Example <code>glyphs grant --pool tobiah pc @Sphirical</code></span></td>
+    </tr>
+    <tr>
       <td>glyphs claim --pool {pool id} {platform} --password {password}</td>
       <td>Claim a code from a pool of promocodes (glyphs)<br /> - <span class="example">Example <code>glyphs claim --pool Tobiah PC --password Genesis</code></span></td>
     </tr>
@@ -35,6 +39,14 @@
     <tr>
       <td>glyphs list managed</td>
       <td>List your managed pools</td>
+    </tr>
+    <tr>
+      <td>glyphs del pool --pool &lt;pool id&gt;</td>
+      <td>Remove a glyph pool that you manage. Providing the pool Id is optional if you only manage one<br /> - <span class="example">Example <code>glyphs del pool --pool tobiah</code></span></td>
+    </tr>
+    <tr>
+      <td>glyphs export --pool &lt;pool id&gt;</td>
+      <td>Export codes from a pool to a <pre>.csv</pre> file<br /> - <span class="example">Example <code>glyphs export --pool tobiah</code></span></td>
     </tr>
     <tr>
       <td>help glyph</td>
