@@ -17,7 +17,7 @@
     "genesis"
   ],
   "author": "TobiTenno",
-  "license": "APACHE 2.0",
+  "license": "APACHE-2.0",
   "bugs": {
     "url": "https://github.com/WFCD/genesis-docs/issues"
   },
@@ -29,9 +29,9 @@
     "debug": "~2.6.9",
     "del": "^3.0.0",
     "eslint": "^4.11.0",
-    "express": "~4.15.5",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-minify": "^2.1.0",
     "jade": "~1.11.0",
@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "mocha": "^4.0.1"
   }
 }
