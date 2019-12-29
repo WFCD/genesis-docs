@@ -27,5 +27,5 @@ app.use(cookieParser());
 app.use(router);
 
 const port = process.env.PORT || 3001;
-const host = process.env.HOSTNAME || process.env.HOST || process.env.IP || 'localhost';
+const host = process.env.HOSTNAME || process.env.HOST || process.env.IP || '0.0.0.0';
 app.listen(port, host);
