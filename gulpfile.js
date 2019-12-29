@@ -1,4 +1,8 @@
-const {task, series, src, dest} = require('gulp');
+'use strict';
+
+const {
+  task, series, src, dest,
+} = require('gulp');
 const minify = require('gulp-minify');
 const cleanCss = require('gulp-clean-css');
 const del = require('del');
@@ -30,7 +34,7 @@ task('pack-js', series(['clean-js'], (done) => {
       noSource: true,
     }))
     .pipe(dest('public/js'));
-    done();
+  done();
 }));
 
 task('pack-css', series(['clean-css'], (done) => {

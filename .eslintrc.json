@@ -28,6 +28,7 @@
     "global-require": "off",
     "no-fallthrough": "off",
     "no-param-reassign": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "no-restricted-globals": "off"
   }
 }

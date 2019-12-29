@@ -1,11 +1,14 @@
-/* globals $,  Cookies, location */
+'use strict';
+
+/* globals $,  Cookies, location, document */
 
 const $body = $(document.body);
 $body.scrollspy({
-    target: '#affix-nav',
-    offset: 205
-})
+  target: '#affix-nav',
+  offset: 205,
+});
 
+// eslint-disable-next-line no-unused-vars
 const setTheme = (themeName, superTheme, reset) => {
   const theme = $('#mode');
   const themecustom = $('#mode-custom');
@@ -33,34 +36,33 @@ $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
-  .not('[href="#license"]') //ignore modal links
+  .not('[href="#license"]') // ignore modal links
   .not('[href="#credits"]')
-  .click(function(event) {
+  .click((event) => {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-      &&
-      location.hostname == this.hostname
+      location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
+      && location.hostname === this.hostname
     ) {
       // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      let target = $(this.hash);
+      target = target.length ? target : $(`[name=${this.hash.slice(1)}]`);
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
+          scrollTop: target.offset().top,
+        }, 1000, () => {
           // Callback after animation
           // Must change focus!
-          var $target = $(target);
+          const $target = $(target);
           $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          if ($target.is(':focus')) { // Checking if the target was focused
             return false;
-          } else {
-            $target.focus(); // Set focus again
           }
+          $target.focus(); // Set focus again
+          return true;
         });
       }
     }

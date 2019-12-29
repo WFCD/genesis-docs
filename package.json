@@ -8,6 +8,7 @@
     "start": "gulp && node app.js",
     "restart": "pm2 kill && pm2 start pm2.json",
     "lint": "npx eslint gulpfile.js routes/. assets/js/main.js",
+    "lint:fix": "npx eslint gulpfile.js routes/. assets/js/main.js --fix",
     "dev": "npx nodemon"
   },
   "repository": {
