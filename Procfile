@@ -1,1 +1,1 @@
-web: npm i -g gulp-cli && npm start
+web: npm start

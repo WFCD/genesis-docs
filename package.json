@@ -4,9 +4,8 @@
   "description": "Help page for Genesis",
   "scripts": {
     "test": "mocha mochaspec.js",
-    "postinstall": "npm install -g gulp",
+    "build": "npm i -g gulp-cli",
     "start": "npx gulp && node app.js",
-    "restart": "pm2 kill && pm2 start pm2.json",
     "lint": "npx eslint gulpfile.js routes/. assets/js/main.js mochaspec.js",
     "lint:fix": "npx eslint gulpfile.js routes/. assets/js/main.js mochaspec.js --fix",
     "dev": "npx nodemon"
