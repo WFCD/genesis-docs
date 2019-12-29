@@ -5,8 +5,10 @@
   "scripts": {
     "test": "mocha spec mochaspec.js",
     "postinstall": "npm install -g gulp pm2",
-    "start": "gulp && pm2 start pm2.json",
-    "restart": "pm2 kill && pm2 start pm2.json"
+    "start": "gulp && node app.js",
+    "restart": "pm2 kill && pm2 start pm2.json",
+    "lint": "npx eslint gulpfile.js routes/. assets/js/main.js",
+    "dev": "npx nodemon"
   },
   "repository": {
     "type": "git",
@@ -24,30 +26,35 @@
   "homepage": "https://genesis.warframestat.us",
   "dependencies": {
     "body-parser": "~1.18.2",
-    "chai": "^4.1.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "del": "^3.0.0",
-    "eslint": "^4.11.0",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-minify": "^2.1.0",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "proxyquire": "^1.8.0",
-    "really-need": "^1.9.2",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "serve-favicon": "~2.4.5",
-    "sinon": "^4.1.2",
-    "supertest": "^3.0.0",
-    "winston": "^2.4.0"
+    "winston": "^2.4.4"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "mocha": "^4.0.1"
+    "chai": "^4.2.0",
+    "debug": "^2.6.9",
+    "del": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-minify": "^3.1.0",
+    "jade": "^1.11.0",
+    "mocha": "^6.2.2",
+    "morgan": "^1.9.1",
+    "sinon": "^8.0.1",
+    "supertest": "^3.4.2"
+  },
+  "nodemonConfig": {
+    "ignore": [],
+    "watch": ["assets", "public"],
+    "env": {
+      "LOG_LEVEL": "debug",
+      "NODE_ENV": "production",
+      "PORT": 3647
+    }
   }
 }

@@ -1,32 +1,16 @@
-const gulp = require('gulp');
+const {task, series, src, dest} = require('gulp');
 const minify = require('gulp-minify');
 const cleanCss = require('gulp-clean-css');
 const del = require('del');
 
-gulp.task('pack-js', ['clean-js'], () => {
-  gulp.src(['assets/js/*.js'])
-    .pipe(minify({
-      ext: {
-        min: '.js',
-      },
-      noSource: true,
-    }))
-    .pipe(gulp.dest('public/js'));
-});
-
-gulp.task('pack-css', ['clean-css'], () => {
-  gulp.src(['assets/css/*.css'])
-    .pipe(cleanCss())
-    .pipe(gulp.dest('public/css'));
-});
-
-gulp.task('clean-js', () => {
+task('clean-js', series((done) => {
   del([
     'public/js/main.js',
   ]);
-});
+  done();
+}));
 
-gulp.task('clean-css', () => {
+task('clean-css', series((done) => {
   del([
     'public/css/main.css',
     'public/css/main.night.css',
@@ -34,6 +18,28 @@ gulp.task('clean-css', () => {
     'public/css/main.eidolon.css',
     'public/css/common.css',
   ]);
-});
+  done();
+}));
 
-gulp.task('default', ['pack-js', 'pack-css']);
+task('pack-js', series(['clean-js'], (done) => {
+  src(['assets/js/*.js'])
+    .pipe(minify({
+      ext: {
+        min: '.js',
+      },
+      noSource: true,
+    }))
+    .pipe(dest('public/js'));
+    done();
+}));
+
+task('pack-css', series(['clean-css'], (done) => {
+  src(['assets/css/*.css'])
+    .pipe(cleanCss())
+    .pipe(dest('public/css'));
+  done();
+}));
+
+task('default', series(['pack-js', 'pack-css'], (done) => {
+  done();
+}));

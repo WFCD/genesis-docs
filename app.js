@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -22,8 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
-// dev logger that should not be used in prod
-
 app.use(router);
 
-module.exports = app;
+const port = process.env.PORT || 3001;
+const host = process.env.HOSTNAME || process.env.HOST || process.env.IP || 'localhost';
+app.listen(port, host);
