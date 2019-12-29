@@ -4,8 +4,8 @@
   "description": "Help page for Genesis",
   "scripts": {
     "test": "mocha mochaspec.js",
-    "build": "npm i -g gulp-cli",
-    "start": "npx gulp && node app.js",
+    "build": "npm i -g gulp && gulp",
+    "start": "node app.js",
     "lint": "npx eslint gulpfile.js routes/. assets/js/main.js mochaspec.js",
     "lint:fix": "npx eslint gulpfile.js routes/. assets/js/main.js mochaspec.js --fix",
     "dev": "npx nodemon"
@@ -58,5 +58,10 @@
       "NODE_ENV": "production",
       "PORT": 3647
     }
-  }
+  },
+  "engines": {
+    "npm": "6.13.4",
+    "node": "12.14.0"
+  },
+  "heroku-run-build-script": true
 }
